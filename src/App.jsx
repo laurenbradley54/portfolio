@@ -17,18 +17,18 @@ const AboutSection = () => {
     };
 
     const backgroundImage = {
-        home: '/home.jpeg',
-        about: '/about4.jpeg',
-        experience: '/experience.jpeg',
-        contact: '/contact.jpeg',
+        home: `${import.meta.env.BASE_URL}home.jpeg`,
+        about: `${import.meta.env.BASE_URL}about4.jpeg`,
+        experience: `${import.meta.env.BASE_URL}experience.jpeg`,
+        contact: `${import.meta.env.BASE_URL}contact.jpeg`
     }[background];
 
     const images = [
-        '/grad.jpeg',
-        '/paris.jpeg',
-        '/newyork2.jpeg',
-        '/lakecomo.jpeg',
-        '/surfing.jpeg'
+        `${import.meta.env.BASE_URL}grad.jpeg`,
+        `${import.meta.env.BASE_URL}paris.jpeg`,
+        `${import.meta.env.BASE_URL}newyork2.jpeg`,
+        `${import.meta.env.BASE_URL}lakecomo.jpeg`,
+        `${import.meta.env.BASE_URL}surfing.jpeg`
     ];
 
     // Experience data
