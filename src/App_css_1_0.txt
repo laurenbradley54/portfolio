@@ -1,0 +1,132 @@
+/* Reset & base */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Kapakana', sans-serif;
+  background-color: white;
+}
+
+.navbar {
+  /*position: fixed;*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start; /* aligns items to the left */
+  gap: 2rem;
+  z-index: 999;
+  /*box-shadow: 0 2px 10px rgba(0,0,0,0.05);*/
+}
+
+@font-face {
+  font-family: 'Abyssinica SIL';
+  src: url('/fonts/AbyssinicaSIL-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #333;
+  font-family: 'Abyssinica SIL', serif; /* 👈 new font here */
+}
+
+.navbar button:hover {
+  text-decoration: underline;
+}
+
+.page {
+  padding-top: 5rem;
+}
+
+/* Three exact vertical sections */
+.section {
+  width: 100%;
+}
+
+.top-white {
+  height: 19vh;
+  background-color: white;
+}
+
+.stripe {
+  height: 50vh;
+  background-color: #F0D3AB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-white {
+  height: 25vh;
+  background-color: white;
+}
+
+/* Content inside the stripe */
+.content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Text */
+h1 {
+  font-size: 9rem;
+  font-weight: normal;
+  color: #111;
+  margin: 0 1rem;
+}
+
+/* Images */
+.side-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.side-image.left {
+  margin-right: 1rem;
+}
+
+.side-image.right.flipped {
+  transform: scaleX(-1);
+  margin-left: 0.5rem;
+}
+
+/* Unified class for all content sections */
+.content-section {
+  min-height: 100vh;
+  padding: 6rem 2rem 2rem;
+  background-color: white;
+  text-align: center;
+}
+
+.content-section:nth-of-type(even) {
+  background-color: #f9f5ee;
+}
+
+.content-section h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.content-section p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}

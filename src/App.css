@@ -1,0 +1,596 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.about-section {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* ⬅️ This makes the background stay put */
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: pink;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  z-index: 1;
+}
+
+.overlay.visible {
+  opacity: 0.4; /* adjust for stronger fade effect */
+}
+
+@font-face {
+  font-family: 'Abyssinica SIL';
+  src: url('/fonts/AbyssinicaSIL-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Your name fixed at the top */
+.header-name {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 300;
+  font-size: 2.0rem;
+  color: black;
+  z-index: 2;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Add the line underneath */
+.header-name::after {
+  content: "";
+  display: block;
+  width: 1000px;
+  height: 1px;
+  background-color: black;
+  margin: 8px auto 0; /* space between text and line */
+  opacity: 0.6; /* subtle look */
+}
+
+.nav-row {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Email anchored to the left 
+.email-text {
+  position: absolute;
+  left: 70px;
+  top: 0;
+  color: black;
+  font-weight: 300;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  font-family: 'Abyssinica SIL', serif;
+}
+
+.email-text a {
+  color: black;
+  text-decoration: none;
+}
+
+.email-text a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+  */
+
+/* Buttons perfectly centered on the page */
+.nav-buttons {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+
+
+.nav-buttons button {
+  background: none;
+  border: none;
+  color: black;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 300;
+  font-family: 'Abyssinica SIL', serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.about-content {
+  width: 90%;
+  max-width: 500px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px; /* space at bottom */
+}
+
+/* Small title box */
+.bio-title-box {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 2px 15px;
+  border-radius: 0px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out forwards;
+  margin-bottom: 16px;
+  animation-delay: 2s;
+  opacity:0;
+}
+
+.bio-title-box h2 {
+  font-family: 'Alegreya SC', serif;
+  font-weight: 400;
+  animation: fadeIn 0.8s ease-in-out forwards;
+  animation-delay: 2s;
+  font-size: 1.3rem;
+  color: white;
+  margin: 0;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+/* Centered Image 
+.bio-image {
+  width: 650px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 0px;
+  margin-bottom: 20px;
+  animation: fadeIn 1.0s ease-in-out forwards;
+  animation-delay: 0s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}*/
+
+/* Large paragraph box */
+.bio-paragraph-box {
+  background-color: #fbddb8ce;
+  padding: 20px 24px;
+  width: 600;
+  border-radius: 0px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 2.0s ease-in-out forwards;
+  animation-delay: 3s; 
+  opacity:0;
+}
+
+.bio-paragraph-box p {
+  font-size: 0.95rem;
+  color: #000000;
+  line-height: 1.6;
+  font-family: 'Abyssinica SIL', serif;
+  margin: 0;
+  animation: fadeIn 1.0s ease-in-out;
+  animation-delay:2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* just slide from bottom */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slideshow-container {
+  width: 650px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 0px;
+  margin-bottom: 20px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.slideshow-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fadeSlide 2s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Experience Content Styles */
+.experience-content {
+  width: 90%;
+  max-width: 900px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.experience-title-box {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 2px 10px;
+  border-radius: 0px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out forwards;
+  margin-bottom: 20px;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.experience-title-box h2 {
+  font-family: 'Alegreya SC', serif;
+  font-weight: 400;
+  animation: fadeIn 0.8s ease-in-out forwards;
+  animation-delay: 1s;
+  font-size: 1.3rem;
+  color: white;
+  margin: 0;
+  opacity: 0;
+}
+
+.experience-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+
+.experience-section {
+  background-color: #fbddb8ce;
+  padding: 20px 24px;
+  border-radius: 0px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.0s ease-in-out forwards;
+  animation-delay: 2.5s;
+  opacity: 0;
+}
+
+.experience-section h3 {
+  font-family: 'Alegreya SC', serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #000000;
+  margin: 0 0 15px 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 8px;
+}
+
+.experience-item {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.experience-item:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.experience-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.experience-header h4 {
+  font-family: 'Abyssinica SIL', serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #000000;
+  margin: 0;
+}
+
+.company {
+  font-family: 'Abyssinica SIL', serif;
+  font-size: 0.95rem;
+  color: #444444;
+  font-style: italic;
+}
+
+.experience-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-family: 'Abyssinica SIL', serif;
+  font-size: 0.85rem;
+  color: #666666;
+}
+
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.highlights li {
+  font-family: 'Abyssinica SIL', serif;
+  font-size: 0.9rem;
+  color: #000000;
+  line-height: 1.5;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.highlights li:before {
+  content: "•";
+  color: #666666;
+  position: absolute;
+  left: 0;
+}
+
+/* Education Styles */
+.education-item {
+  margin-bottom: 15px;
+}
+
+.education-item h4 {
+  font-family: 'Abyssinica SIL', serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #000000;
+  margin: 0 0 5px 0;
+}
+
+.school {
+  font-family: 'Abyssinica SIL', serif;
+  font-size: 0.95rem;
+  color: #444444;
+  font-style: italic;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.graduation {
+  font-family: 'Abyssinica SIL', serif;
+  font-size: 0.85rem;
+  color: #666666;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.coursework {
+  margin-top: 10px;
+}
+
+.coursework strong {
+  font-family: 'Abyssinica SIL', serif;
+  font-size: 0.9rem;
+  color: #000000;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.coursework-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.course-tag {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-family: 'Abyssinica SIL', serif;
+  font-size: 0.8rem;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Skills Styles */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-family: 'Abyssinica SIL', serif;
+  font-size: 0.85rem;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .experience-content {
+    width: 95%;
+    max-width: none;
+  }
+  
+  .experience-meta {
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .coursework-list,
+  .skills-container {
+    justify-content: center;
+  }
+}
+
+/* Project Section Styles - Add these to your existing CSS */
+.project-section {
+  background-color: #fbddb8ce;
+  padding: 20px 24px;
+  border-radius: 0px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.0s ease-in-out forwards;
+  animation-delay: 2.5s;
+  opacity: 0;
+}
+
+.project-section h3 {
+  font-family: 'Alegreya SC', serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #000000;
+  margin: 0 0 15px 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 8px;
+}
+
+.project-item {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.project-item:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.project-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.project-header h4 {
+  font-family: 'Abyssinica SIL', serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #000000;
+  margin: 0;
+}
+
+.project-name {
+  font-family: 'Abyssinica SIL', serif;
+  font-size: 0.95rem;
+  color: #444444;
+  font-style: italic;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  font-family: 'Abyssinica SIL', serif;
+  font-size: 0.85rem;
+  color: #666666;
+}
+
+.contact-content {
+  width: 90%;
+  max-width: 500px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/*
+.contact-title-box {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 4px 10px;
+  margin-bottom: 20px;
+  color: white;
+  font-family: 'Alegreya SC', serif;
+  font-size: 1.3rem;
+  animation: fadeIn 1s ease-in-out forwards;
+}*/
+
+.contact-title-box {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 2px 15px;
+  border-radius: 0px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out forwards;
+  margin-bottom: 16px;
+  animation-delay: 1s;
+  opacity:0;
+}
+
+.contact-title-box h2 {
+  font-family: 'Alegreya SC', serif;
+  font-weight: 400;
+  animation: fadeIn 0.8s ease-in-out forwards;
+  animation-delay: 2s;
+  font-size: 1.3rem;
+  color: white;
+  margin: 0;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.contact-info-box {
+  background-color: #fbddb8ce;
+  padding: 20px 24px;
+  border-radius: 0px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-family: 'Abyssinica SIL', serif;
+  font-size: 0.95rem;
+  color: #000;
+  animation: fadeIn 0.8s ease-in-out forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+.contact-info-box a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.contact-info-box a:hover {
+  opacity: 0.8;
+}
