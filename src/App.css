@@ -6,6 +6,19 @@ body, html {
   height: 100%;
   overflow-x: hidden;
 }
+body{
+  background-color: #000;
+}
+
+.section {
+  min-height: 100vh;
+  height: 100svh; /* ✅ This works better on mobile than 100vh */
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 
 .about-section {
   min-height: 100vh;
