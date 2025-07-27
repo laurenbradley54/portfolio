@@ -192,7 +192,7 @@ const AboutSection = () => {
                             <br />
                             
                             I'm Lauren, a data scientist, technology enthusiast, lifelong learner, and aspiring leader with a passion for turning data into insight. For the past three years, I’ve worked as a Data Engineer at Booz Allen Hamilton, where I’ve specialized in ETL workflows and led data pipeline development for dashboard products using Databricks, PySpark, Python, and SQL.
-                             I earned my Bachelor of Science in Computational Modeling and Data Analytics from Virginia Tech in December 2021, with coursework in machine learning, mathematical modeling, algorithms, and data visualization. During my college years, I interned at Northwestern Mutual, gaining hands-on experience in both data engineering and data science — from building scalable systems to exploring predictive models. 
+                             I earned my Bachelor of Science in Computational Modeling and Data Analytics from Virginia Tech in December 2021, with coursework in machine learning, mathematical modeling, algorithms, and data visualization. During my college years, I interned at Northwestern Mutual, gaining hands-on experience in both data engineering and data science from building scalable systems to exploring predictive models. 
                              Originally from Richmond, Virginia, I began my career in Virginia Beach, followed by a TDY in Stuttgart, Germany in 2024, and now based in San Diego, California. Outside of work, I enjoy traveling, surfing, and supporting the growth and empowerment of others.
                               Thanks for stopping by, I’d love to connect!
                             <br />
@@ -287,7 +287,7 @@ const AboutSection = () => {
                     <h2>Contact</h2>
                     </div>
                     <div className="contact-info-box">
-                    <p>I'd love to connect — feel free to reach out!</p>
+                    <p>I'd love to connect, feel free to reach out!</p>
                     <p><strong>Email:</strong> <a href="mailto:laurenbradley54@gmail.com">laurenbradley54@gmail.com</a></p>
                     <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/lauren-bradley123/" target="_blank" rel="noopener noreferrer">linkedin.com/in/lauren-bradley123/</a></p>
                     </div>
