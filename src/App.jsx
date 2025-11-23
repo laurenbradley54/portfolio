@@ -37,8 +37,11 @@ const AboutSection = () => {
             title: "Senior Data Scientist",
             company: "Booz Allen Hamilton",
             duration: "2022 - Present",
-            location: "Virginia Beach, VA → Stuttgart, Germany→ San Diego, CA",
+            location: "Virginia Beach, VA → Stuttgart, Germany → San Diego, CA",
             highlights: [
+                "Implemented a linear optimization solution using PuLP to minimize time of a scheduled training plan while adhering to constraints such as availability, part requirements, and weather interferences.",
+                "Built data pipelines in Palantir Foundry using Python Code Repos and Pipeline Builder to automate multi-source data ingestion and develop ontology-based objects supporting interdepartmental analytics.",
+                "Utilized Palantir Foundry's LLM integrations to generate automated narrative summaries for executive-level briefings.",
                 "Directed development of end-to-end products including data acquisition workflows, Pyspark pipeline development, and dashboard design through balancing hands-on execution with task delegation to deliver client-facing dashboard products.",
                 "Integrated multiple disparate systems through the data discovery process by using SQL methodologies to establish relationships between unique identifiers from disparate sources.",
                 "Developed high-quality data pipelining solutions leveraging Databricks, Apache Spark, Python, and advanced ETL processes that exceeded client expectations and provided effective support of customers and employees for business impact.",
@@ -129,7 +132,8 @@ const AboutSection = () => {
             "Mathematical Modeling", 
             "Data Structures & Algorithms",
             "Mathematics",
-            "Data Visualizations"
+            "Data Visualizations",
+            "Statistics"
         ]
     };
 
@@ -190,11 +194,10 @@ const AboutSection = () => {
                             Hello,
                             <br />
                             <br />
-                            
-                            I'm Lauren, a data scientist, technology enthusiast, lifelong learner, and aspiring leader with a passion for turning data into insight. For the past three years, I’ve worked as a Data Engineer at Booz Allen Hamilton, where I’ve specialized in ETL workflows and led data pipeline development for dashboard products using Databricks, PySpark, Python, and SQL.
-                             I earned my Bachelor of Science in Computational Modeling and Data Analytics from Virginia Tech in December 2021, with coursework in machine learning, mathematical modeling, algorithms, and data visualization. During my college years, I interned at Northwestern Mutual, gaining hands-on experience in both data engineering and data science from building scalable systems to exploring predictive models. 
-                             Originally from Richmond, Virginia, I began my career in Virginia Beach, followed by a TDY in Stuttgart, Germany in 2024, and now based in San Diego, California. Outside of work, I enjoy traveling, surfing, and supporting the growth and empowerment of others.
-                              Thanks for stopping by, I’d love to connect!
+                            I'm Lauren, a data scientist, technology enthusiast, lifelong learner, and aspiring leader with a passion for turning data into insight. For the past three years, I've worked as a Data Engineer at Booz Allen Hamilton, where I've specialized in ETL workflows and led data pipeline development for dashboard products using Databricks, PySpark, Python, and SQL.
+                            I earned my Bachelor of Science in Computational Modeling and Data Analytics from Virginia Tech in December 2021, with coursework in machine learning, mathematical modeling, algorithms, and data visualization. During my college years, I interned at Northwestern Mutual, gaining hands-on experience in both data engineering and data science from building scalable systems to exploring predictive models. 
+                            Originally from Richmond, Virginia, I began my career in Virginia Beach, followed by a TDY in Stuttgart, Germany in 2024, and now based in San Diego, California. Outside of work, I enjoy traveling, surfing, and supporting the growth and empowerment of others.
+                            Thanks for stopping by, I'd love to connect!
                             <br />
                             <br />
                             -Lauren
