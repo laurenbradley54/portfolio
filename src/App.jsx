@@ -27,14 +27,13 @@ const AboutSection = () => {
         `${import.meta.env.BASE_URL}grad.jpeg`,
         `${import.meta.env.BASE_URL}paris.jpeg`,
         `${import.meta.env.BASE_URL}newyork2.jpeg`,
-        `${import.meta.env.BASE_URL}lakecomo.jpeg`,
-        `${import.meta.env.BASE_URL}surfing.jpeg`
+        `${import.meta.env.BASE_URL}lakecomo.jpeg`
     ];
 
     // Experience data
     const experiences = [
         {
-            title: "Senior Data Scientist",
+            title: "Data Scientist III",
             company: "Booz Allen Hamilton",
             duration: "2022 - Present",
             location: "Virginia Beach, VA → Stuttgart, Germany → San Diego, CA",
